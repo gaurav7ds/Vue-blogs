@@ -1,0 +1,38 @@
+url:
+'https://conduit.productionready.io/api/users'
+
+return Boolean(state.isloggedIn)
+
+axios.interceptors.request.use(config=>{
+    const token = getItem('accessToken')
+    const authToken = token?`Token ${token}`:''
+    config.headers.Authorization = authToken
+    console.log(config);
+    return config
+})
+
+array from 1 to n
+Array(n)=> empty*n array 
+Array(10).keys() = > index as key = 0 to 9
+
+map over each key and return key + 1 
+
+[...Array(10).kays().map(key=>key+1)]
+
+range from srart to end say 4-12 
+[...Array(end).kays().map(key=>key+start)]
+
+We can watch computed properties
+
+
+toggle eg like dislike //
+optimistic updated => we update in ui and then send request 
+context,payload
+return new Promise(resolve){
+    promise = paylad.likes?likeApi.addToFavourite(payload.slug):likeApi.removeToFavourite(payload.slug)
+    promise.then(res=>{
+        resolve res.data
+    })
+}
+
+
